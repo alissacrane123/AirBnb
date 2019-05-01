@@ -19,7 +19,7 @@ class Splash extends React.Component {
         <div>
           <div className="splash-search-container">
             <div className="splash-search">
-            
+              
             </div>
           </div>
 

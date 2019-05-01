@@ -264,8 +264,13 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-container"
       }, this.props.currentUser ? loggedInButtons : loggedOutButtons, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-logo"
-      }, "logo")));
+        className: "nav-logo-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        "class": "nav-logo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        "class": "logo",
+        src: 'logo2.png'
+      })))));
     }
   }]);
 

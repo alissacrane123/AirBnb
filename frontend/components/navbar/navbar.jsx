@@ -28,8 +28,11 @@ class NavBar extends React.Component {
 
         
           { this.props.currentUser ? loggedInButtons : loggedOutButtons }
-          <div className="nav-logo">
-          logo
+
+          <div className="nav-logo-container">
+            <div class="nav-logo">
+              <img class="logo" src={'logo2.png'} />
+            </div>
           </div>
 
         </div>
