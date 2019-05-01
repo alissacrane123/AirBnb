@@ -34,13 +34,13 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="session-form-container">
         {/* {this.renderErrors()} */}
 
-        <div className="login-content-container">
-          <div className="login-input-container">
+        {/* <div className="session-content-container"> */}
+          <div className="session-input-container">
 
-            <form className="login-form">
+            <form className="session-form">
 
               <label htmlFor="email-login">
                 <input onChange={this.update("email")} id="email-login" type="email" placeholder="Email Address" />
@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
             </form>
           </div>
 
-        </div>
+        {/* </div> */}
 
       </div>
     )

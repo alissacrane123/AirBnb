@@ -1,24 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import { openModal } from '../../actions/modal_actions';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   render() {
+    let openModal = this.props.openModal;
+
     const loggedInButtons = (
       <div className="nav-buttons">
         <button className="nav-button" onClick={this.props.logout}>Logout</button>
-        <button>Help</button>
-        
+        <button>Help</button>      
       </div>
     );
 
+
     const loggedOutButtons = (
       <div className="nav-buttons">
-        <Link to={'/login'}>Log in</Link>
-        <Link to={'/signup'}>Sign up</Link>
+        <button className="nav-button" onClick={() => openModal('login')}>Log in</button>
+        <button className="nav-button" onClick={() => openModal('signup')}>Sign up</button>
+        <button>Helpy</button>
       </div>
     );
 
@@ -30,8 +35,8 @@ class NavBar extends React.Component {
           { this.props.currentUser ? loggedInButtons : loggedOutButtons }
 
           <div className="nav-logo-container">
-            <div class="nav-logo">
-              <img class="logo" src={'logo2.png'} />
+            <div className="nav-logo">
+              <img className="logo" src={'logo2.png'} />
             </div>
           </div>
 

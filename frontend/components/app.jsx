@@ -7,17 +7,19 @@ import { AuthRoute } from '../util/route_util';
 import LoginFormContainer from '../components/session/login_form_container';
 import SignupFormContainer from '../components/session/signup_form_container';
 import Splash from '../components/splash/splash';
+import Modal from '../components/session/modal_container';
 
 const App = () => (
   <div>
-    
+    <Modal />
+    <header>
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
       </Switch>
 
       <Route exact path="/" component={Splash} /> 
-
+    </header>
     
   </div>
 );

@@ -39,13 +39,13 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="signup-form-container">
+      <div className="session-form-container">
         {/* {this.renderErrors()} */}
 
-        <div className="signup-content-container">
-          <div className="signup-input-container">
+        {/* <div className="session-content-container"> */}
+          <div className="session-input-container">
 
-            <form className="signup-form">
+            <form className="session-form">
 
               <label htmlFor="email-signup">
                 <input onChange={this.update("email")} id="email-signup" type="email" placeholder="Email Address" />
@@ -59,6 +59,11 @@ class SignupForm extends React.Component {
               <label htmlFor="lname-signup">
                 <input onChange={this.update("lname")} id="lname-signup" type="input" placeholder="Last name" />
               </label>
+
+
+
+
+              
               <label htmlFor="bday-signup">
                 <input onChange={this.update("bday")} id="bday-signup" type="input" placeholder="Day" />
               </label>
@@ -74,7 +79,7 @@ class SignupForm extends React.Component {
             </form>
           </div>
 
-        </div>
+        {/* </div> */}
 
       </div>
     )
