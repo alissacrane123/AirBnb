@@ -1,8 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { AuthRoute } from '../util/route_util';
+
 
 import NavBarContainer from '../components/navbar/navbar_container';
 import LoginFormContainer from '../components/session/login_form_container';
+import SignupFormContainer from '../components/session/signup_form_container';
+import Splash from '../components/splash/splash';
 
 const App = () => (
   <div>
@@ -10,9 +14,15 @@ const App = () => (
       <h1>ShareBnb</h1>
       <NavBarContainer />
     </header>
+    
+      <Switch>
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      </Switch>
 
-    <Route path="/login" component={LoginFormContainer} />
+      <Route exact path="/" component={Splash} /> 
 
+    
   </div>
 );
 

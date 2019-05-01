@@ -1,0 +1,6 @@
+.splash {
+  background: url('../images/vanlife.jpg') no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 100%;
+}

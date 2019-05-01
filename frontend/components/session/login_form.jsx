@@ -7,6 +7,7 @@ class LoginForm extends React.Component {
       email: '',
       password: ''
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -39,18 +40,18 @@ class LoginForm extends React.Component {
         <div className="login-content-container">
           <div className="login-input-container">
 
-              <form className="login-form">
+            <form className="login-form">
 
-                <label htmlFor="email-login">
-                  <input onChange={this.update("email")} id="email-login" type="email" placeholder="Email Address" />
-                </label>
-                <label htmlFor="password-login">
-                  <input onChange={this.update("password")} id="password-login" type="password" placeholder="Password" />
-                </label>
+              <label htmlFor="email-login">
+                <input onChange={this.update("email")} id="email-login" type="email" placeholder="Email Address" />
+              </label>
+              <label htmlFor="password-login">
+                <input onChange={this.update("password")} id="password-login" type="password" placeholder="Password" />
+              </label>
 
-                <button onClick={this.handleSubmit} className="login-button">Log in</button>
+              <button onClick={this.handleSubmit} className="login-button">Log in</button>
 
-              </form>
+            </form>
           </div>
 
         </div>

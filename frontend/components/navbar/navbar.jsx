@@ -10,7 +10,7 @@ class NavBar extends React.Component {
     const loggedInButtons = (
       <ul>
         <button>Help</button>
-        <button>Logout</button>
+        <button className="nav-button" onClick={this.props.logout}>Logout</button>
       </ul>
     );
 
