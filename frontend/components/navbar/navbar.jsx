@@ -8,28 +8,30 @@ class NavBar extends React.Component {
 
   render() {
     const loggedInButtons = (
-      <ul>
-        <button>Help</button>
+      <div className="nav-buttons">
         <button className="nav-button" onClick={this.props.logout}>Logout</button>
-      </ul>
+        <button>Help</button>
+        
+      </div>
     );
 
     const loggedOutButtons = (
-      <ul>
+      <div className="nav-buttons">
         <Link to={'/login'}>Log in</Link>
         <Link to={'/signup'}>Sign up</Link>
-
-      </ul>
+      </div>
     );
 
     return (
       <header>
-        <div className="nav-bar">
-          <nav className="nav-bar-buttons">
-            
-            { this.props.currentUser ? loggedInButtons : loggedOutButtons }
-            
-          </nav>
+        <div className="nav-container">
+
+        
+          { this.props.currentUser ? loggedInButtons : loggedOutButtons }
+          <div className="nav-logo">
+          logo
+          </div>
+
         </div>
       </header>
     )

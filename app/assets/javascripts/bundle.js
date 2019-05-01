@@ -248,20 +248,24 @@ function (_React$Component) {
   _createClass(NavBar, [{
     key: "render",
     value: function render() {
-      var loggedInButtons = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Help"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      var loggedInButtons = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-button",
         onClick: this.props.logout
-      }, "Logout"));
-      var loggedOutButtons = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Logout"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Help"));
+      var loggedOutButtons = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-buttons"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/login'
       }, "Log in"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: '/signup'
       }, "Sign up"));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "nav-bar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "nav-bar-buttons"
-      }, this.props.currentUser ? loggedInButtons : loggedOutButtons)));
+        className: "nav-container"
+      }, this.props.currentUser ? loggedInButtons : loggedOutButtons, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-logo"
+      }, "logo")));
     }
   }]);
 
@@ -749,7 +753,11 @@ function (_React$Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "MODAL FORMS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "SEARCH FORM")));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-search-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-search"
+      }))));
     }
   }]);
 

@@ -10,10 +10,6 @@ import Splash from '../components/splash/splash';
 
 const App = () => (
   <div>
-    {/* <header>
-      <h1>ShareBnb</h1>
-      <NavBarContainer />
-    </header> */}
     
       <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />

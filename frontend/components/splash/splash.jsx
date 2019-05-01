@@ -17,8 +17,11 @@ class Splash extends React.Component {
         </header>
 
         <div>
-          <p>MODAL FORMS</p>
-          <p>SEARCH FORM</p>
+          <div className="splash-search-container">
+            <div className="splash-search">
+            
+            </div>
+          </div>
 
         </div>
       </div>
