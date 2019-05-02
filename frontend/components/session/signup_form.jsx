@@ -74,12 +74,15 @@ class SignupForm extends React.Component {
                 <div className="bday-legal">
                   To sign up, you must be 18 or older. Other people won’t see your birthday.
                 </div>
-                <div className="bday-inputs">
-                  <div className="bday-month">
-                    <select className="month">
-                      { months }
-                    </select>
-                  </div>
+                <div className="bday-inputs-container">
+                  <div className="bday-input">
+                    <div className="bday-month">
+                      <select className="month">
+                        { months }
+                      </select>
+                    </div>
+
+                </div>
                 </div>
               </div>
 

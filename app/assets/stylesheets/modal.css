@@ -67,6 +67,24 @@ input {
 .bday-legal {
   margin: 8px 0 16px 0;
 }
+
+.bday-inputs-container {
+  width: 100%;
+  margin-bottom: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: white;
+  height: 46px;
+}
+
+.bday-input {
+  height: 100%;
+}
+
+select {
+  height: 100%;
+}
 /* .birth-header {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
   font-size: 14px;
