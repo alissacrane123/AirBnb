@@ -39,7 +39,7 @@ class SignupForm extends React.Component {
 
   render() {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map(month => (
-      <option value={month} >{month}</option>
+      <option value={month} id={month}>{month}</option>
     ))
 
 
