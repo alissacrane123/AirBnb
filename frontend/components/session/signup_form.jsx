@@ -39,9 +39,22 @@ class SignupForm extends React.Component {
 
   render() {
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map(month => (
-      <option value={month} id={month}>{month}</option>
+      <option value={month} key={month}>{month}</option>
     ))
 
+    const days = [];
+    let i = 1
+    while (i < 32) {
+      days.push(<option value={String(i)} key={String(i)}>{String(i)}</option>);
+      i++;
+    }
+
+    const years = [];
+    let j = 2019
+    while (j > 1920) {
+      years.push(<option value={String(j)} key={String(j)}>{String(j)}</option>);
+      j--;
+    }
 
 
     return (
@@ -82,24 +95,41 @@ class SignupForm extends React.Component {
                       </select>
                     </div>
 
+                  <div className="bday-day">
+                    <select className="day">
+                      { days }
+                    </select>
+                  </div>
+
+                  <div className="bday-year">
+                    <select className="year">
+                      { years }
+                    </select>
+                  </div>
+
                 </div>
                 </div>
               </div>
 
+              <div className="funny">
+                We’ll send you marketing promotions, special offers, inspiration, and bunch of other stuff  you probably don't want!
+              </div>
 
-              {/* <label htmlFor="bday-signup">
-                <input onChange={this.update("bday")} id="bday-signup" type="input" placeholder="Day" />
-              </label>
-              <label htmlFor="bmon-signup">
-                <input onChange={this.update("bmon")} id="bmon-signup" type="input" placeholder="Month" />
-              </label>
-              <label htmlFor="byear-signup">
-                <input onChange={this.update("byear")} id="byear-signup" type="input" placeholder="Year" />
-              </label> */}
-
-              <button onClick={this.handleSubmit} className="signup-button">Sign up</button>
-
+              <div className="session-button">
+                <button onClick={this.handleSubmit} className="signup">Sign up</button>
+              </div>
             </form>
+          </div>
+
+          <div className="form-foot-container">
+            <div className="line">
+              ___________________________________________________________________________________
+            </div>
+
+            <div className="switch-form">
+              Already have a VanBnb account? { this.props.switchForm }
+            </div>
+          
           </div>
 
         {/* </div> */}
