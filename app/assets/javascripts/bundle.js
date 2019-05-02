@@ -773,6 +773,11 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map(function (month) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          value: month
+        }, month);
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -807,28 +812,19 @@ function (_React$Component) {
         id: "lname-signup",
         type: "input",
         placeholder: "Last name"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "bday-signup"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.update("bday"),
-        id: "bday-signup",
-        type: "input",
-        placeholder: "Day"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "bmon-signup"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.update("bmon"),
-        id: "bmon-signup",
-        type: "input",
-        placeholder: "Month"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "byear-signup"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        onChange: this.update("byear"),
-        id: "byear-signup",
-        type: "input",
-        placeholder: "Year"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bday-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bday-head"
+      }, "Birthday"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bday-legal"
+      }, "To sign up, you must be 18 or older. Other people won\u2019t see your birthday."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bday-inputs"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bday-month"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "month"
+      }, months)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         onClick: this.handleSubmit,
         className: "signup-button"
       }, "Sign up"))));

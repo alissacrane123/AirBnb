@@ -38,6 +38,12 @@ class SignupForm extends React.Component {
   // }
 
   render() {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'].map(month => (
+      <option value={month} >{month}</option>
+    ))
+
+
+
     return (
       <div className="session-form-container">
         {/* {this.renderErrors()} */}
@@ -61,10 +67,24 @@ class SignupForm extends React.Component {
               </label>
 
 
+              <div className="bday-container">
+                <div className="bday-head">
+                  Birthday
+                </div>
+                <div className="bday-legal">
+                  To sign up, you must be 18 or older. Other people won’t see your birthday.
+                </div>
+                <div className="bday-inputs">
+                  <div className="bday-month">
+                    <select className="month">
+                      { months }
+                    </select>
+                  </div>
+                </div>
+              </div>
 
 
-              
-              <label htmlFor="bday-signup">
+              {/* <label htmlFor="bday-signup">
                 <input onChange={this.update("bday")} id="bday-signup" type="input" placeholder="Day" />
               </label>
               <label htmlFor="bmon-signup">
@@ -72,7 +92,7 @@ class SignupForm extends React.Component {
               </label>
               <label htmlFor="byear-signup">
                 <input onChange={this.update("byear")} id="byear-signup" type="input" placeholder="Year" />
-              </label>
+              </label> */}
 
               <button onClick={this.handleSubmit} className="signup-button">Sign up</button>
 
