@@ -639,6 +639,8 @@ function (_React$Component) {
           return e.stopPropagation();
         }
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "X"
+      }, "X"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "modal-form"
       }, component)));
     }
@@ -805,7 +807,13 @@ function (_React$Component) {
         className: "session-form-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "session-input-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-header-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-header"
+      }, "Sign up for your new account below!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "line"
+      }, "___________________________________________________________________________________")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "session-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "email-signup"

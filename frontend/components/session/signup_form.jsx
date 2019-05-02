@@ -63,6 +63,15 @@ class SignupForm extends React.Component {
 
         {/* <div className="session-content-container"> */}
           <div className="session-input-container">
+          
+            <div className="form-header-container">
+              <div className="form-header"> 
+                Sign up for your new account below!
+              </div>
+              <div className="line">
+                ___________________________________________________________________________________
+              </div>
+            </div>
 
             <form className="session-form">
 

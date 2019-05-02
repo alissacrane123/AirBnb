@@ -1,5 +1,5 @@
 .splash {
-  background-image: url('/bg2.jpg');
+  background-image: url('/bus2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -61,12 +61,13 @@
 }
 
 .nav-logo {
-   height: 100px;
+   height: 80px;
    width: 150px;
+   /* margin-top: 10px; */
 }
 
 .logo {
-  margin-top: 10px;
+  padding-bottom: 10px;
   height: 90px;
   width: 135px;
 }
