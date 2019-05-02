@@ -7,6 +7,8 @@ export const receiveListings = listings => ({
   listings
 });
 
-export const fetchListings = () => dispatch => (
-  ListingAPIUtil.fetchListings().then(listings => dispatch(receiveListings(listings)))
-);
+export const fetchListings = (filters) => dispatch => {
+  return (
+    ListingAPIUtil.fetchListings(filters).then(listings => dispatch(receiveListings(listings)))
+  )
+};

@@ -8,6 +8,7 @@ class LoginForm extends React.Component {
       password: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field) {
@@ -18,19 +19,11 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state)
-    this.props.submit(user);
+    const user = Object.assign({}, this.state);
+    this.props.submit(user)
+      .then(this.props.closeModal)
+      .then(this.props.history.push('/listings'));
   }
-
-  // renderErrors() {
-  //   return (
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>{error}</li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
 
   render() {
     return (
@@ -59,6 +52,16 @@ class LoginForm extends React.Component {
       </div>
     )
   }
+
+    // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>{error}</li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
   
 }
 

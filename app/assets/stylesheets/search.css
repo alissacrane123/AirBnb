@@ -1,0 +1,10 @@
+
+.map-container {
+  height: 500px;
+  width: 500px;
+  background: red;
+}
+
+#map{
+  height: 100%;
+}

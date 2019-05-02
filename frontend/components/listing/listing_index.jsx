@@ -4,7 +4,7 @@ import ListingIndexItem from './listing_index_item';
 class ListingIndex extends React.Component {
 
   componentDidMount() {
-    this.props.fetchListings();
+    // this.props.fetchListings();
   }
 
   render() {
