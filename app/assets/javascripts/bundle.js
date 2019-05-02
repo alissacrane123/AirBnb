@@ -86,6 +86,37 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./frontend/actions/listing_actions.js":
+/*!*********************************************!*\
+  !*** ./frontend/actions/listing_actions.js ***!
+  \*********************************************/
+/*! exports provided: RECEIVE_LISTINGS, receiveListings, fetchListings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_LISTINGS", function() { return RECEIVE_LISTINGS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveListings", function() { return receiveListings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchListings", function() { return fetchListings; });
+/* harmony import */ var _util_listing_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/listing_api_util */ "./frontend/util/listing_api_util.js");
+
+var RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
+var receiveListings = function receiveListings(listings) {
+  return {
+    type: RECEIVE_LISTINGS,
+    listings: listings
+  };
+};
+var fetchListings = function fetchListings() {
+  return function (dispatch) {
+    return _util_listing_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchListings"]().then(function (listings) {
+      return dispatch(receiveListings(listings));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -200,36 +231,176 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
-/* harmony import */ var _components_session_login_form_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/session/login_form_container */ "./frontend/components/session/login_form_container.jsx");
-/* harmony import */ var _components_session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/session/signup_form_container */ "./frontend/components/session/signup_form_container.jsx");
-/* harmony import */ var _components_splash_splash__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/splash/splash */ "./frontend/components/splash/splash.jsx");
-/* harmony import */ var _components_session_modal_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/session/modal_container */ "./frontend/components/session/modal_container.jsx");
+/* harmony import */ var _components_listing_listing_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/listing/listing_index_container */ "./frontend/components/listing/listing_index_container.js");
+/* harmony import */ var _components_splash_splash__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/splash/splash */ "./frontend/components/splash/splash.jsx");
+/* harmony import */ var _components_session_modal_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/session/modal_container */ "./frontend/components/session/modal_container.jsx");
 
 
  // import NavBarContainer from '../components/navbar/navbar_container';
-
+// import LoginFormContainer from '../components/session/login_form_container';
+// import SignupFormContainer from '../components/session/signup_form_container';
 
 
 
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_session_modal_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_session_modal_container__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
-    path: "/login",
-    component: _components_session_login_form_container__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
-    exact: true,
-    path: "/signup",
-    component: _components_session_signup_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+    path: "/listings",
+    component: _components_listing_listing_index_container__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
-    component: _components_splash_splash__WEBPACK_IMPORTED_MODULE_5__["default"]
+    component: _components_splash_splash__WEBPACK_IMPORTED_MODULE_4__["default"]
   })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (App); // Route path="/signup" component={SignupFormContainer}
+
+/***/ }),
+
+/***/ "./frontend/components/listing/listing_index.jsx":
+/*!*******************************************************!*\
+  !*** ./frontend/components/listing/listing_index.jsx ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _listing_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./listing_index_item */ "./frontend/components/listing/listing_index_item.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var ListingIndex =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(ListingIndex, _React$Component);
+
+  function ListingIndex() {
+    _classCallCheck(this, ListingIndex);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(ListingIndex).apply(this, arguments));
+  }
+
+  _createClass(ListingIndex, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchListings();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var listings = this.props.listings.map(function (listing) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_listing_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: listing.id,
+          listing: listing
+        });
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "listings-index-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "listings-ul"
+      }, listings));
+    }
+  }]);
+
+  return ListingIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (ListingIndex);
+
+/***/ }),
+
+/***/ "./frontend/components/listing/listing_index_container.js":
+/*!****************************************************************!*\
+  !*** ./frontend/components/listing/listing_index_container.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _listing_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./listing_index */ "./frontend/components/listing/listing_index.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _actions_listing_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/listing_actions */ "./frontend/actions/listing_actions.js");
+
+
+
+
+
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    listings: Object.values(state.entities.listings)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchListings: function fetchListings() {
+      return dispatch(Object(_actions_listing_actions__WEBPACK_IMPORTED_MODULE_3__["fetchListings"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_listing_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/listing/listing_index_item.jsx":
+/*!************************************************************!*\
+  !*** ./frontend/components/listing/listing_index_item.jsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
+
+
+var ListingIndexItem = function ListingIndexItem(_ref) {
+  var listing = _ref.listing;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "list-item-container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "list-item-ul"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "/api/listings/".concat(listing.id)
+  }, listing.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "list-item-description"
+  }, listing.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "list-item-price"
+  }, "Price: $", listing.price)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ListingIndexItem);
 
 /***/ }),
 
@@ -1021,7 +1192,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/root */ "./frontend/components/root.jsx");
+/* harmony import */ var _actions_listing_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/listing_actions */ "./frontend/actions/listing_actions.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -1048,7 +1221,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   window.getState = store.getState;
-  window.dispatch = store.dispatch; // testing end
+  window.dispatch = store.dispatch;
+  window.fetchListings = _actions_listing_actions__WEBPACK_IMPORTED_MODULE_4__["fetchListings"]; // testing end
 
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
@@ -1069,10 +1243,13 @@ document.addEventListener('DOMContentLoaded', function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _users_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./users_reducer */ "./frontend/reducers/users_reducer.js");
+/* harmony import */ var _listings_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./listings_reducer */ "./frontend/reducers/listings_reducer.js");
+
 
 
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  listings: _listings_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -1095,6 +1272,36 @@ var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"]
   session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/listings_reducer.js":
+/*!***********************************************!*\
+  !*** ./frontend/reducers/listings_reducer.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_listing_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/listing_actions */ "./frontend/actions/listing_actions.js");
+
+
+var listingsReducer = function listingsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _actions_listing_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_LISTINGS"]:
+      return action.listings;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (listingsReducer);
 
 /***/ }),
 
@@ -1292,6 +1499,25 @@ var configureStore = function configureStore() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (configureStore);
+
+/***/ }),
+
+/***/ "./frontend/util/listing_api_util.js":
+/*!*******************************************!*\
+  !*** ./frontend/util/listing_api_util.js ***!
+  \*******************************************/
+/*! exports provided: fetchListings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchListings", function() { return fetchListings; });
+var fetchListings = function fetchListings() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/listings'
+  });
+};
 
 /***/ }),
 
