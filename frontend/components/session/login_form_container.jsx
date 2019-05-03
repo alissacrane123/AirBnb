@@ -20,7 +20,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     submit: (user) => dispatch(login(user)),
-    switchForm: (<button onClick={() => dispatch(openModal('signup'))}>Sign up</button>),
+    switchForm: (<button onClick={() => dispatch(openModal('signup'))} className="switch">Sign up</button>),
     closeModal: () => dispatch(closeModal()),
     fetchListings: () => dispatch(fetchListings({}))
   };

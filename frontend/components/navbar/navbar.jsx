@@ -36,7 +36,7 @@ class NavBar extends React.Component {
 
           <div className="nav-logo-container">
             <div className="nav-logo">
-              <img className="logo" src={'logo2.png'} />
+              <img className="logo" src={'splash-logo.png'} />
             </div>
           </div>
 

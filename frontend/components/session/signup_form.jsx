@@ -78,16 +78,16 @@ class SignupForm extends React.Component {
             <form className="session-form">
 
               <label htmlFor="email-signup">
-                <input onChange={this.update("email")} id="email-signup" type="email" placeholder="Email Address" />
+                <input onChange={this.update("email")} id="input-session" type="email" placeholder="Email Address" />
               </label>
               <label htmlFor="password-signup">
-                <input onChange={this.update("password")} id="password-signup" type="password" placeholder="Create a password" />
+                <input onChange={this.update("password")} id="input-session" type="password" placeholder="Create a password" />
               </label>
               <label htmlFor="fname-signup">
-                <input onChange={this.update("fname")} id="fname-signup" type="input" placeholder="First name" />
+                <input onChange={this.update("fname")} id="input-session" type="input" placeholder="First name" />
               </label>
               <label htmlFor="lname-signup">
-                <input onChange={this.update("lname")} id="lname-signup" type="input" placeholder="Last name" />
+                <input onChange={this.update("lname")} id="input-session" type="input" placeholder="Last name" />
               </label>
 
 

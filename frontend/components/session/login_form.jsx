@@ -27,23 +27,43 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form-container">
+      <div className="login-form-container">
         {/* {this.renderErrors()} */}
 
         {/* <div className="session-content-container"> */}
           <div className="session-input-container">
 
-            <form className="session-form">
+            <form className="login-form">
 
               <label htmlFor="email-login">
-                <input onChange={this.update("email")} id="email-login" type="email" placeholder="Email Address" />
+                <input onChange={this.update("email")} id="input-session" type="email" placeholder="Email Address" />
               </label>
-              <label htmlFor="password-login">
-                <input onChange={this.update("password")} id="password-login" type="password" placeholder="Password" />
+              <label htmlFor="password-session">
+                <input onChange={this.update("password")} id="input-session" type="password" placeholder="Password" />
               </label>
 
-              <button onClick={this.handleSubmit} className="login-button">Log in</button>
+              <div className="remember">
+                <label>Remember me
+                  <input type="checkbox" name="" id="remember"/>
+                </label>
+              
+              </div>
 
+              <div className="session-button">
+                <button onClick={this.handleSubmit} className="login">Log in</button>
+              </div>
+
+              <div className="forgot">
+                <div className="forgot-text">Forgot password? Too bad!</div>
+              </div>
+
+              <div className="login-line">
+              _____________________________________________________________________________________
+              </div>
+
+              <div className="switch-form-login">
+                Don't have an account? {this.props.switchForm}
+              </div>
             </form>
           </div>
 

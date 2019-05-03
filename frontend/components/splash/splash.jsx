@@ -16,7 +16,7 @@ class Splash extends React.Component {
           <NavBarContainer />
         </header>
 
-        <div>
+        <div className="splash-body">
           <div className="splash-search-container">
             <div className="splash-search">
               SEARCH VALUES WILL GO HERE

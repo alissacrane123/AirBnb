@@ -1,42 +1,27 @@
+
+
 .splash {
   background-image: url('/bus2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
   min-width: 100%;
-  min-height: 100%;
-  position: absolute;
+
+  height: 789px;
+
+  position: fixed;
+
 }
 
-.nav-container {
-  height: 100px;
+.splash-body {
+  margin-top: 89px;
+  position: relative;
+  height: 100%;
 }
 
-.nav-buttons {
-  position: absolute;
-  padding-right: 10px;
-  right: 0px;
-  width: 50%;
-  height: 100px;
-  float: right;
-}
-
-.nav-buttons * {
-  float: right;
-  color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  padding-right: 15px;
-  padding-left: 15px;
-  background: none;
-  border: none;
-  font-weight: 300;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
 
 .splash-search-container {
-  position: relative;
+  position: absolute;
   margin-left: 16%;
   margin-right: 15%;
   margin-top: 5%;
@@ -53,22 +38,3 @@
 
 }
 
-.nav-logo-container {
-  position: absolute;
-  left: 0px;
-  width: 50%;
-  height: 100px;
-}
-
-.nav-logo {
-   height: 80px;
-   width: 150px;
-   /* margin-top: 10px; */
-}
-
-.logo {
-  padding-bottom: 20px;
-  padding-right: 30px;
-  height: 90px;
-  width: 135px;
-}

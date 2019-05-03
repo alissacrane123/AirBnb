@@ -14,10 +14,6 @@ class Search extends React.Component {
 
       <div className="search-container">
 
-        <header>
-          <NavBarContainer />
-        </header>
-        
         <div className="search-listings">
           <ListingIndex listings={listings} fetchListings={fetchListings} />
         </div>
