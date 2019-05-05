@@ -351,7 +351,8 @@ function (_React$Component) {
           key: listing.id,
           listing: listing
         });
-      });
+      }); // const count = listings.count();
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "listings-index-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -365,15 +366,13 @@ function (_React$Component) {
         className: "index-aside"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "aside-text"
-      }, "Over 330,000 guest reviews for San Francisco homes, with an average of 4.8 out of 5 stars."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "There are 3 vans in San Francisco...better get one while ya can!"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "listings-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "listings-header-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "listings-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Introducing VanBnb in San Francisco")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "listings-header-aside"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A selection of vans verified for grooviness"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Introducing VanBnb in San Francisco"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "listings-ul"
       }, listings)));
     }
@@ -409,17 +408,20 @@ var ListingIndexItem = function ListingIndexItem(_ref) {
     className: "list-item-ul"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-item-content"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    className: "list-item-link",
+    to: "/api/listings/".concat(listing.id)
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-item-photo"
-  }, "Photo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-item-info"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/api/listings/".concat(listing.id)
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "item-info-ul"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "item-name"
   }, listing.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "list-item-description"
-  }, listing.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-item-price"
-  }, "Price: $", listing.price)))));
+  }, "$", listing.price, " per day")))))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ListingIndexItem);
@@ -479,7 +481,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "nav-button",
         onClick: this.props.logout
-      }, "Logout"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Help"));
+      }, "Logout"));
       var loggedOutButtons = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-buttons"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -492,7 +494,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return openModal('signup');
         }
-      }, "Sign up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Helpy"));
+      }, "Sign up"));
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-container"
       }, this.props.currentUser ? loggedInButtons : loggedOutButtons, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -594,10 +596,12 @@ function (_React$Component) {
           className: "nav2-search-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "nav2-logo"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "logo2",
           src: 'other-logo2.png'
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "nav2-search-outer"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "nav2-search-inner"
@@ -613,38 +617,7 @@ function (_React$Component) {
   return NavBar2;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (NavBar2); // render() {
-//   let openModal = this.props.openModal;
-//   const loggedInButtons = (
-//     <div className="nav2-buttons-container">
-//       <button className="nav2-button" onClick={this.props.logout}>Logout</button>
-//       <button>Help</button>
-//     </div>
-//   );
-//   const loggedOutButtons = (
-//     <div className="nav2-buttons-container">
-//       <button className="nav2-button" onClick={() => openModal('login')}>Log in</button>
-//       <button className="nav2-button" onClick={() => openModal('signup')}>Sign up</button>
-//       <button>Helpy</button>
-//     </div>
-//   );
-//   if (this.props.location.pathname === '/') {
-//     return null;
-//   } else {
-//     return (
-//       <header>
-//         <div className="nav2-container">
-//           {this.props.currentUser ? loggedInButtons : loggedOutButtons}
-//           <div className="nav2-logo-container">
-//             <div className="nav2-search">
-//               <input type="text" placeholder="Try anywhere!" id="nav2-search" />
-//             </div>
-//             <div className="nav2-logo">
-//               <img className="logo2" src={'other-logo.png'} />
-//             </div>
-//           </div>
-//         </div>
-//       </header>
+/* harmony default export */ __webpack_exports__["default"] = (NavBar2);
 
 /***/ }),
 
@@ -1655,6 +1628,12 @@ function (_React$Component) {
   _createClass(Splash, [{
     key: "render",
     value: function render() {
+      var guests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(function (num) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+          className: "splash-guests",
+          placeholder: "Guests"
+        }, num);
+      });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1663,7 +1642,46 @@ function (_React$Component) {
         className: "splash-search-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-search"
-      }, "SEARCH VALUES WILL GO HERE"))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-search-head"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-head-text"
+      }, "Vans, vans, vans and more vans!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-search-inputs"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-input-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "splash-input-label"
+      }, "WHERE"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-input-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "splash-input",
+        type: "text",
+        placeholder: "San Francisco, CA, United States"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-input-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "splash-input-label"
+      }, "CHECK-IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-input-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "splash-input",
+        type: "text",
+        placeholder: "mm/dd/yyyy"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-input-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "splash-input-label"
+      }, "GUESTS"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-input-div"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "splash-guests",
+        placeholder: "Guests"
+      }, guests))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-submit-wrap"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "splash-submit"
+      }, "Search"))))))));
     }
   }]);
 

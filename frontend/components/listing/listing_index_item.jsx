@@ -6,20 +6,25 @@ const ListingIndexItem = ({listing}) => {
     <div className="list-item-container">
       <ul className="list-item-ul">
         <div className="list-item-content">
-          <div className="list-item-photo">
-            Photo 
-          </div>
-          <div className="list-item-info">
-            <Link to={`/api/listings/${listing.id}`}>{listing.name}</Link>
+          <Link className="list-item-link" to={`/api/listings/${listing.id}`}>
 
-            <div className="list-item-description">
-              {listing.description}
+            <div className="list-item-photo">
+               
+            </div>
+            <div className="list-item-info">
+
+              <ul className="item-info-ul">
+                <div className="item-name">
+                  {listing.name}
+                </div>
+
+                <div className="list-item-price">
+                  ${listing.price} per day
+                </div>
+              </ul>
             </div>
 
-            <div className="list-item-price">
-              Price: ${listing.price}
-            </div>
-          </div>
+          </Link>
         </div>
       </ul>
 

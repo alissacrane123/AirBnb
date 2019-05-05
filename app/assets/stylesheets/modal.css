@@ -24,8 +24,8 @@ body {
   background: white;
   box-sizing: border-box;
   position: absolute;
-  width: 560px;
-  margin-top: 65px;
+  width: 625px;
+  margin-top: 100px;
   margin-bottom: 65px;
   overflow: scroll;
   top: 50%;
@@ -38,9 +38,10 @@ body {
   background: white;
   box-sizing: border-box;
   position: absolute;
-  width: 560px;
-  height: 575px;
-  overflow: scroll;
+  width: 625px;
+  height: 615px;
+  /* overflow: scroll; */
+  margin-top: 31px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -50,7 +51,8 @@ body {
 
 .fb-google {
   height: 100px;
-  /* margin-bottom: 30px; */
+  margin-top: 5px;
+  margin-bottom: 18px;
 }
 
 .session-button-login {
@@ -58,15 +60,16 @@ body {
   margin-bottom: 10px;
   box-sizing: border-box;
   border-radius: 4px;
-  height: 46px;
+  height: 53px;
   text-align: center;
   background: blue;
 }
 
 .login-line {
-  height: 50px;
+  height: 40px;
   overflow: hidden;
-  padding-top: 10px;
+      padding-top: 10px;
+    margin-bottom: 5px;
   color: rgb(201, 194, 194);
 }
 
@@ -84,10 +87,13 @@ body {
 }
 
 .modal-form {
-  height: 90%;
+  /* height: 90%; */
   /* top: 10%; */
   /* margin-top: 15px; */
-  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: 20px;
 }
 
 .modal-form-login {
@@ -98,14 +104,20 @@ body {
 }
 
 .remember {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  font-size: 18px;
+
 }
 
 .forgot {
-  margin-left: 190px;
-  margin-right: 190px;
+  margin-left: 180px;
+  margin-right: 180px;
   text-align: center;
-  margin-top: 15px;
+  font-size: 15px;
+  margin-top: 17px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  color: rgb(15, 112, 112);
 }
 
 .modal-form > * {
@@ -122,40 +134,48 @@ body {
 }
 
 .login-form {
-  height: 282px;
+  height: 300px;
+  padding-top: 4px;
   /* bottom: 0; */
 }
 
 #input-session {
   width: 100%;
-  padding: 15px;
-  margin-bottom: 16px;
+  padding-left: 15px;
+  font-size: 17px;
+  height: 55px;
+  margin-bottom: 15px;
   display: inline-block;
   box-sizing: border-box;
   border-radius: 4px;
-  border: rgb(207, 210, 212) solid 1px;
+  border: 1px solid #e8e8e8;
   background: white;
 }
 
+.bday-container {
+  margin-top: 5px;
+}
 .bday-head {
-  line-height: 1.37em;
-  font-weight: bolder;
-  letter-spacing: 1px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 17px;
 }
 
 .bday-legal {
-  margin: 8px 0 16px 0;
+    margin-top: 15px;
+    font-size: 16px;
 }
 
 .bday-inputs-container {
   width: 100%;
+  margin-top: 17px;
   margin-bottom: 16px;
   display: inline-block;
 
   box-sizing: border-box;
   border-radius: 4px;
   background: white;
-  height: 46px;
+  height: 55px;
 }
 
 .bday-input {
@@ -189,7 +209,10 @@ select {
 }
 
 .funny {
-  margin-bottom: 16px;
+     margin-bottom: 16px;
+    margin-top: 11px;
+    font-size: 15px;
+    line-height: 1.27;
 }
 
 .session-button {
@@ -197,7 +220,7 @@ select {
   margin-bottom: 10px;
   box-sizing: border-box;
   border-radius: 4px;
-  height: 46px;
+  height: 55px;
   text-align: center;
 }
 
@@ -210,7 +233,7 @@ select {
   color: white;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
-  background: red;
+  background:#FF5A5F;
   border-radius: 4px;
 }
 
@@ -253,4 +276,10 @@ select {
 
 .form-header {
   text-align: center;
+  font-size: 14.5px;
+  font-weight: 550;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  letter-spacing: .5px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

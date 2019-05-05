@@ -14,7 +14,7 @@ class NavBar extends React.Component {
     const loggedInButtons = (
       <div className="nav-buttons">
         <button className="nav-button" onClick={this.props.logout}>Logout</button>
-        <button>Help</button>      
+        {/* <button>Help</button>       */}
       </div>
     );
 
@@ -23,7 +23,7 @@ class NavBar extends React.Component {
       <div className="nav-buttons">
         <button className="nav-button" onClick={() => openModal('login')}>Log in</button>
         <button className="nav-button" onClick={() => openModal('signup')}>Sign up</button>
-        <button>Helpy</button>
+        {/* <button>Helpy</button> */}
       </div>
     );
 

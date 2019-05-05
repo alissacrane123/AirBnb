@@ -11,6 +11,8 @@ class ListingIndex extends React.Component {
     const listings = this.props.listings.map(listing => (
       <ListingIndexItem key={listing.id} listing={listing} />
     ));
+
+    // const count = listings.count();
     
     return (
       <div className="listings-index-container">
@@ -21,7 +23,7 @@ class ListingIndex extends React.Component {
           </div>
           <div className="index-aside">
             <div className="aside-text">
-              Over 330,000 guest reviews for San Francisco homes, with an average of 4.8 out of 5 stars.
+              There are 3 vans in San Francisco...better get one while ya can!
             </div>
           </div>
         </div>
@@ -32,9 +34,9 @@ class ListingIndex extends React.Component {
             <div className="listings-header">
               <p>Introducing VanBnb in San Francisco</p>
             </div>
-            <div className="listings-header-aside">
+            {/* <div className="listings-header-aside">
               <p>A selection of vans verified for grooviness</p>
-            </div>
+            </div> */}
           </div>
 
           <ul className="listings-ul">

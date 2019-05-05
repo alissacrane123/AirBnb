@@ -28,13 +28,15 @@ header {
   color: white;
   padding-top: 34px;
   padding-bottom: 34px;
-  padding-right: 15px;
+  padding-right: 25px;
   padding-left: 15px;
   background: none;
   border: none;
-  font-weight: 200;
+  outline: none;
+  font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .nav-button:hover {
@@ -99,14 +101,19 @@ header {
   color: rgb(90, 87, 87);
   padding-top: 34px;
   padding-bottom: 34px;
-  padding-right: 15px;
+  padding-right: 25px;
   padding-left: 15px;
   background: none;
   border: none;
   font-weight: bold;
+  outline: none;
   font-size: 16px;
   letter-spacing: 1px;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.nav2-button:hover {
+  border-bottom:3px solid
 }
 
 .nav2-search-outer {
@@ -149,6 +156,7 @@ header {
     outline: none;
     font-weight: 800;
     font-size: 20px;
+    color: black;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     letter-spacing: 1px;
 }
