@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ListingMap from './listing_map';
+// import ListingMapContainer from './map_container';
 import ListingIndex from '../listing/listing_index';
 import NavBarContainer from '../navbar/navbar_container';
 
@@ -13,7 +14,7 @@ class Search extends React.Component {
   
 
   render() {
-    let {  listings, fetchListings, updateFilter, city } = this.props;
+    let { filters, listings, fetchListings, updateFilter, city } = this.props;
     let searchListings = [];
 
     return (
@@ -25,7 +26,8 @@ class Search extends React.Component {
         </div>
         
         <div className="search-map">
-          <ListingMap city={city} listings={listings} updateFilter={updateFilter} />
+          <ListingMap city={city} filters={filters} listings={listings} fetchListings={fetchListings} updateFilter={updateFilter} />
+          {/* <ListingMapContainer /> */}
         </div>
       </div>
     )

@@ -7,6 +7,7 @@ import NavBarContainer2 from '../components/navbar/navbar2_container';
 // import LoginFormContainer from '../components/session/login_form_container';
 // import SignupFormContainer from '../components/session/signup_form_container';
 // import ListingIndexContainer from '../components/listing/listing_index_container';
+import ListingShowContainer from '../components/listing/listing_show_container';
 import SearchContainer from '../components/search/search_container';
 import Splash from '../components/splash/splash';
 import Modal from '../components/session/modal_container';
@@ -20,7 +21,7 @@ const App = () => (
     <div className="body-container">
       <Switch>
         <Route exact path="/listings" component={SearchContainer} />
-
+        <Route exact path="/listings/:listingId" component={ListingShowContainer} />
         <Route exact path="/" component={Splash} /> 
       </Switch>
     </div>

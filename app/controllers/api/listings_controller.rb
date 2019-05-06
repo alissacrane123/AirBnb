@@ -16,9 +16,9 @@ class Api::ListingsController < ApplicationController
   def index
     @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
     # debugger
-    if params[:city].length > 1
-      @listings = Listing.where("city = ?", params[:city])
-    end
+    # if params[:city] && params[:city].length > 1
+    #   @listings = Listing.where("city = ?", params[:city])
+    # end
     
     render :index 
   end

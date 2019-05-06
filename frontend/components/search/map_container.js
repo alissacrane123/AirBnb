@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
-// import ListingIndex from '../listing/listing_index';
-// import React from 'react';
-import Search from './search';
+
+import ListingMap from './listing_map';
 import { fetchListings } from '../../actions/listing_actions';
 import { updateFilter } from '../../actions/filter_actions';
 
@@ -23,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+// export default connect(mapStateToProps, mapDispatchToProps)(ListingMap);

@@ -7,3 +7,9 @@ export const fetchListings = (filters) => {
   })
 }
 
+export const fetchListing = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/listings/${id}`
+  })
+}

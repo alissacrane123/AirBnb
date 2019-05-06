@@ -5,6 +5,7 @@ export default class MarkerManager {
   }
 
   updateMarkers(listings) {
+    debugger
     let listingsObj = {};
     listings.forEach(listing => listingsObj[listing.id] = listing )
 

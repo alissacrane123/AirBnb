@@ -22,7 +22,7 @@
 }
 
 .search-listings {
-  z-index: -1;
+  /* z-index: -1; */
   position: relative;
   width: 60%;
   min-height: 800px;
