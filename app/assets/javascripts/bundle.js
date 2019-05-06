@@ -527,6 +527,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _search_filter_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../search/filter_form */ "./frontend/components/search/filter_form.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -546,6 +547,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
+
  // import { openModal } from '../../actions/modal_actions';
 
 var NavBar2 =
@@ -562,7 +564,10 @@ function (_React$Component) {
   _createClass(NavBar2, [{
     key: "render",
     value: function render() {
-      var openModal = this.props.openModal;
+      var _this$props = this.props,
+          openModal = _this$props.openModal,
+          updateFilter = _this$props.updateFilter,
+          filters = _this$props.filters;
       var loggedInButtons = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav2-buttons-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -601,15 +606,10 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "logo2",
           src: 'other-logo2.png'
-        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "nav2-search-outer"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "nav2-search-inner"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          placeholder: "Try \"Mars\"",
-          id: "nav2-search"
-        })))), this.props.currentUser ? loggedInButtons : loggedOutButtons));
+        }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search_filter_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          filters: filters,
+          updateFilter: updateFilter
+        })), this.props.currentUser ? loggedInButtons : loggedOutButtons));
       }
     }
   }]);
@@ -635,6 +635,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _navbar2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./navbar2 */ "./frontend/components/navbar/navbar2.jsx");
+/* harmony import */ var _actions_filter_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/filter_actions */ "./frontend/actions/filter_actions.js");
+
 
 
 
@@ -644,7 +646,9 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     user: state.entities.users[state.session.id],
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    filters: state.ui.filters,
+    listings: Object.values(state.entities.listings)
   };
 };
 
@@ -655,6 +659,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     openModal: function openModal(modal) {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_2__["openModal"])(modal));
+    },
+    updateFilter: function updateFilter(filter, value) {
+      return dispatch(Object(_actions_filter_actions__WEBPACK_IMPORTED_MODULE_5__["updateFilter"])(filter, value));
     }
   };
 };
@@ -736,6 +743,68 @@ var Root = function Root(_ref) {
 
 /***/ }),
 
+/***/ "./frontend/components/search/filter_form.jsx":
+/*!****************************************************!*\
+  !*** ./frontend/components/search/filter_form.jsx ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var handleChange = function handleChange(filter, updateFilter) {
+  return function (e) {
+    return updateFilter(filter, e.currentTarget.value);
+  };
+};
+
+var FilterForm = function FilterForm(_ref) {
+  var filters = _ref.filters,
+      updateFilter = _ref.updateFilter;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav2-search-outer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "nav2-search-inner"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    onChange: handleChange('city', updateFilter),
+    type: "text",
+    placeholder: "Try \"Mars\"",
+    id: "nav2-search"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FilterForm); // < div className = "splash-search-inputs" >
+//   <div className="splash-input-container">
+//     <p className="splash-input-label">WHERE</p>
+//     <div className="splash-input-div">
+//       <input className="splash-input" type="text" placeholder="San Francisco, CA, United States" />
+//     </div>
+//   </div>
+//   <div className="splash-input-container">
+//     <p className="splash-input-label">CHECK-IN</p>
+//     <div className="splash-input-div">
+//       <input className="splash-input" type="text" placeholder="mm/dd/yyyy" />
+//     </div>
+//   </div>
+//   <div className="splash-input-container">
+//     <p className="splash-input-label">GUESTS</p>
+//     <div className="splash-input-div">
+//       <select className="splash-guests" placeholder="Guests">
+//         {guests}
+//       </select>
+//     </div>
+//   </div>
+//   <div className="splash-submit-wrap">
+//     <button className="splash-submit">Search</button>
+//   </div>
+// </div >
+
+/***/ }),
+
 /***/ "./frontend/components/search/listing_map.jsx":
 /*!****************************************************!*\
   !*** ./frontend/components/search/listing_map.jsx ***!
@@ -768,16 +837,26 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+var locations = {
+  sb: {
+    center: {
+      lat: 34.4208,
+      lng: -119.6982
+    },
+    // this is SF
+    zoom: 13
+  }
+};
 
 var ListingMap =
 /*#__PURE__*/
 function (_React$Component) {
   _inherits(ListingMap, _React$Component);
 
-  function ListingMap() {
+  function ListingMap(props) {
     _classCallCheck(this, ListingMap);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(ListingMap).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(ListingMap).call(this, props)); // this.mapOptions = 
   }
 
   _createClass(ListingMap, [{
@@ -791,7 +870,10 @@ function (_React$Component) {
         },
         // this is SF
         zoom: 13
-      };
+      }; // if (this.props.city === 'santa barbara') {
+      //   mapOptions = locations.sb;
+      // }
+
       this.map = new google.maps.Map(this.mapNode, mapOptions);
       this.MarkerManager = new _util_marker_manager__WEBPACK_IMPORTED_MODULE_1__["default"](this.map);
       this.registerListeners();
@@ -826,7 +908,9 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      this.MarkerManager.updateMarkers(this.props.listings);
+      this.MarkerManager.updateMarkers(this.props.listings); // if (this.props.city === 'santa barbara') {
+      //   mapOptions = locations.sb;
+      // }
     }
   }, {
     key: "render",
@@ -893,10 +977,10 @@ var Search =
 function (_React$Component) {
   _inherits(Search, _React$Component);
 
-  function Search() {
+  function Search(props) {
     _classCallCheck(this, Search);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Search).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Search).call(this, props));
   }
 
   _createClass(Search, [{
@@ -905,7 +989,9 @@ function (_React$Component) {
       var _this$props = this.props,
           listings = _this$props.listings,
           fetchListings = _this$props.fetchListings,
-          updateFilter = _this$props.updateFilter;
+          updateFilter = _this$props.updateFilter,
+          city = _this$props.city;
+      var searchListings = [];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -916,6 +1002,7 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "search-map"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_listing_map__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        city: city,
         listings: listings,
         updateFilter: updateFilter
       })));
@@ -951,7 +1038,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    listings: Object.values(state.entities.listings)
+    listings: Object.values(state.entities.listings),
+    city: state.ui.filters.city,
+    bounds: state.ui.bounds
   };
 };
 
@@ -1807,7 +1896,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var defaultFilters = Object.freeze({
-  bounds: {}
+  bounds: {},
+  city: 'san francisco'
 });
 
 var filtersReducer = function filtersReducer() {

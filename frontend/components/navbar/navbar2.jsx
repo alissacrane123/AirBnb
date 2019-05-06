@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FilterForm from '../search/filter_form';
 // import { openModal } from '../../actions/modal_actions';
 
 class NavBar2 extends React.Component {
@@ -9,7 +10,7 @@ class NavBar2 extends React.Component {
   }
 
   render() {
-    let openModal = this.props.openModal;
+    let {openModal, updateFilter, filters} = this.props;
 
     const loggedInButtons = (
       <div className="nav2-buttons-container">
@@ -40,11 +41,13 @@ class NavBar2 extends React.Component {
                   </Link>
                 </div>
 
-                <div className="nav2-search-outer">
+                
+              <FilterForm filters={filters} updateFilter={updateFilter} />
+                {/* <div className="nav2-search-outer">
                   <div className="nav2-search-inner">
                     <input type="text" placeholder="Try &quot;Mars&quot;" id="nav2-search" />
                   </div>
-                </div>
+                </div> */}
                 
               </div>
 

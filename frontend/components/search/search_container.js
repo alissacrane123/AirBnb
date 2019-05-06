@@ -8,7 +8,9 @@ import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    listings: Object.values(state.entities.listings)
+    listings: Object.values(state.entities.listings),
+    city: state.ui.filters.city,
+    bounds: state.ui.bounds
   }
 }
 

@@ -29,7 +29,6 @@ class LoginForm extends React.Component {
     return (
       <div className="login-form-container">
         {/* {this.renderErrors()} */}
-
         {/* <div className="session-content-container"> */}
           <div className="session-input-container">
 

@@ -14,6 +14,7 @@ class Listing < ApplicationRecord
       .where("lat > ?", bounds[:southWest][:lat])
       .where("lng < ?", bounds[:northEast][:lng])
       .where("lng > ?", bounds[:southWest][:lng])
-
   end
+
+  
 end

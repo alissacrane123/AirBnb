@@ -3,7 +3,8 @@ import merge from 'lodash/merge';
 
 
 const defaultFilters = Object.freeze({
-  bounds: {}
+  bounds: {},
+  city: 'san francisco'
 });
 
 const filtersReducer = (state = defaultFilters, action) => {
